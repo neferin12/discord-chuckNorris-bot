@@ -4,7 +4,7 @@
   "description": "If \"chuck\" or \"chuckNorris\" is written in the Chat, this bot will reply with a random chuck Norris Joke",
   "main": "index.js",
   "scripts": {
-    "release": "dotenv release-it",
+    "release": "dotenv run \"./node_modules/.bin/release-it\"",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "keywords": [],
