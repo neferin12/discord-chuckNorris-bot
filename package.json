@@ -1,0 +1,17 @@
+{
+  "name": "discord-chuck_norris-bot",
+  "version": "1.0.0",
+  "description": "If \"chuck\" or \"chuckNorris\" is written in the Chat, this bot will reply with a random chuck Norris Joke",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "Julian Pollinger",
+  "license": "ISC",
+  "dependencies": {
+    "axios": "^0.20.0",
+    "discord.js": "^12.3.1",
+    "dotenv": "^8.2.0"
+  }
+}
