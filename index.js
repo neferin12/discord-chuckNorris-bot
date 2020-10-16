@@ -24,13 +24,13 @@ function answer(c, msg) {
     if (c === 'chuck' || c === 'chuckNorris') {
         axios.get('https://api.icndb.com/jokes/random')
             .then((res) => {
-                msg.channel.send(res.data.value.joke);
+                msg.channel.send(res.data.value.joke.replace(/&quot;/g, '\\"'));
                 console.log('Witz gesendet');
             })
             .catch(() => {
                 axios.get('https://api.chucknorris.io/jokes/random')
                     .then((resb) => {
-                        msg.channel.send(resb.data.value);
+                        msg.channel.send(resb.data.value.replace(/&quot;/g, '\\"'));
                         console.log('Backupwitz gesendet');
                     })
                     .catch((err) => {
@@ -78,12 +78,12 @@ async function tell(c, msg) {
     if (c === 'tell') {
         axios.get('https://api.icndb.com/jokes/random')
             .then((res) => {
-                speak(res.data.value.joke, msg);
+                speak(res.data.value.joke.replace(/&quot;/g, '\\"'), msg);
             })
             .catch(() => {
                 axios.get('https://api.chucknorris.io/jokes/random')
                     .then((resb) => {
-                        speak(resb.data.value, msg);
+                        speak(resb.data.value.replace(/&quot;/g, '\\"'), msg);
                     })
                     .catch((err) => {
                         console.error(err);
