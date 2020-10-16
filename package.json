@@ -1,10 +1,10 @@
 {
   "name": "discord-chuck_norris-bot",
-  "version": "1.1.1",
+  "version": "2.0.0",
   "description": "If \"chuck\" or \"chuckNorris\" is written in the Chat, this bot will reply with a random chuck Norris Joke",
   "main": "index.js",
   "scripts": {
-    "release": "dotenv run \"./node_modules/.bin/release-it\"",
+    "release": "dotenv release-it",
     "serve": "nodemon index.js",
     "test": "eslint index.js"
   },
@@ -20,6 +20,7 @@
     "ffmpeg-static": "^4.2.7"
   },
   "devDependencies": {
+    "dotenv-cli": "^4.0.0",
     "eslint": "^7.11.0",
     "eslint-config-airbnb-base": "^14.2.0",
     "eslint-plugin-import": "^2.22.1",
