@@ -51,7 +51,7 @@ async function speak(s, msg) {
             // Select the language and SSML voice gender (optional)
             voice: {
                 languageCode: 'en-US',
-                ssmlGender: 'NEUTRAL',
+                name: 'en-US-Wavenet-A',
             },
             // select the type of audio encoding
             audioConfig: { audioEncoding: 'MP3' },
