@@ -56,15 +56,18 @@ async function speak(s, msg) {
             // select the type of audio encoding
             audioConfig: { audioEncoding: 'MP3' },
         };
+        console.log('Getting audio');
         const [response] = await client.synthesizeSpeech(request);
         // Write the binary audio content to a local file
         const writeFile = util.promisify(fs.writeFile);
         await writeFile('output.mp3', response.audioContent, 'binary');
         const connection = await msg.member.voice.channel.join();
         const dispatcher = connection.play('output.mp3');
+        console.log('play');
         dispatcher.on('finish', () => {
             console.log('Played Joke');
-            connection.destroy();
+            dispatcher.destroy();
+            connection.disconnect();
         });
     } else {
         msg.reply('You need to join a voice channel first!');
