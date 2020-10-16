@@ -62,7 +62,10 @@ async function speak(s, msg) {
         await writeFile('output.mp3', response.audioContent, 'binary');
         const connection = await msg.member.voice.channel.join();
         const dispatcher = connection.play('output.mp3');
-        dispatcher.on('finish', () => console.log('Played Joke'));
+        dispatcher.on('finish', () => {
+            console.log('Played Joke');
+            connection.destroy();
+        });
     } else {
         msg.reply('You need to join a voice channel first!');
     }
