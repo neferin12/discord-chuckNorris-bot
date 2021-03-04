@@ -14,6 +14,8 @@ const client = new textToSpeech.TextToSpeechClient();
 const PREFIX = '$';
 const ALLOW_NO_PREFIX = true;
 
+const ERROR_MESSAGE = 'I wasn\'t able to get this joke. Probably Chuck Norris doesn\'t want you to laugh about him. Try again later!';
+
 bot.login(TOKEN);
 
 bot.on('ready', () => {
@@ -35,7 +37,7 @@ function answer(c, msg) {
                     })
                     .catch((err) => {
                         console.error(err);
-                        msg.channel.send('I wasn\'t able to get this joke. Probably Cuck Norris doesn\'t want you to laugh about him. Try again later!');
+                        msg.channel.send(ERROR_MESSAGE);
                     });
             });
     } else if (c === 'ping') {
@@ -87,7 +89,7 @@ async function tell(c, msg) {
                     })
                     .catch((err) => {
                         console.error(err);
-                        speak('I wasn\'t able to get this joke. Probably Cuck Norris doesn\'t want you to laugh about him. Try again later!', msg);
+                        speak(ERROR_MESSAGE, msg);
                     });
             });
     }
