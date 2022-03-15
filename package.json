@@ -17,7 +17,7 @@
     "axios": "^0.21.1",
     "discord.js": "^12.5.3",
     "dotenv": "^8.4.0",
-    "ffmpeg-static": "^4.4.0"
+    "ffmpeg-static": "^5.0.0"
   },
   "devDependencies": {
     "dotenv-cli": "^4.0.0",
